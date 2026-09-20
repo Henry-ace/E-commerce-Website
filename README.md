@@ -1,16 +1,45 @@
-# React + Vite
+# E-Commerce Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based e-commerce website where users can browse products, search and filter by category or price, view product details, manage a shopping cart, and create an account.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Home** — landing page
+- **Shop** — product listing with category filtering, price sorting, and "Show More" pagination
+- **Search** — live search by product title or category, with quick-filter chips and price sorting
+- **Product Details** — dedicated page for each product (`/product/:id`)
+- **Cart** — view and manage items added to cart
+- **Sign Up** — create an account (name, email, password), with a "Continue with Google" option
+- **Contact** — contact page
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** — UI library
+- **React Router** — client-side routing with a shared layout and nested page routes
+- **Context API** — shared search state across pages
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── components/     # Shared UI components and layout
+├── context/        # React Context providers (e.g. search state)
+├── hooks/          # Custom hooks (e.g. product data fetching)
+├── pages/          # Route-level pages (Home, Shop, Search, Product, Cart, SignUp, Contact)
+└── routes/         # Route configuration
+```
+
+
+| Path            | Page            |
+|-----------------|-----------------|
+| `/`             | Home            |
+| `/shop`         | Shop            |
+| `/search`       | Search          |
+| `/product/:id`  | Product Details |
+| `/cart`         | Cart            |
+| `/signUp`       | Sign Up         |
+| `/contact`      | Contact         |
+
+## License
+
+MIT
